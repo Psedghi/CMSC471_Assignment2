@@ -12,7 +12,6 @@
 /* header */
 header { margin-bottom: 1.5rem; }
 header h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
-.subtitle { color: #444; font-size: 0.95rem; margin: 0.3rem 0; }
 .byline { color: #999; font-size: 0.8rem; margin: 0.2rem 0; }
 
 /* dashboard */
@@ -25,7 +24,6 @@ header h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
 
 .chart-panel { width: fit-content; }
 
-/* section labels */
 .section-label {
     font-size: 0.75rem;
     font-weight: bold;
@@ -36,7 +34,6 @@ header h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
 .white-hat-label { color: #2563eb; }
 .black-hat-label { color: #b91c1c; }
 
-/* chart header */
 .chart-header {
     display: flex;
     justify-content: space-between;
@@ -92,7 +89,6 @@ header h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
 .ref-line  { stroke: #e33; stroke-width: 1px; stroke-dasharray: 5 4; opacity: 0.6; }
 .ref-label { font-size: 10px; fill: #e33; font-family: Arial, sans-serif; }
 
-/* zone labels */
 .zone-label { font-size: 11px; font-family: Arial, sans-serif; font-style: italic; opacity: 0.8; }
 
 /* annotation */
@@ -125,8 +121,8 @@ header h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
 }
 
 /* ── Black hat: bar chart ── */
-.female-bar { fill: #7c3aed; }   /* purple — looks "alarming" for men-are-losing framing */
-.male-bar   { fill: #b91c1c; }   /* red */
+.female-bar { fill: #7c3aed; } 
+.male-bar   { fill: #b91c1c; } 
 
 .bar-label {
     font-size: 11px;

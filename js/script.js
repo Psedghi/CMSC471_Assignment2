@@ -1,13 +1,13 @@
 // chart dimensions
 const M1 = { top: 95, right: 50, bottom: 65, left: 75 };
-const W1 = 650, H1 = 430; // Reduced W1 from 680 to 650
+const W1 = 650, H1 = 430;
 
 const M2 = { top: 50, right: 40, bottom: 80, left: 75 };
 const W2 = 620, H2 = 360;
 
 // black hat: cherry-picked high-income countries
 const BH_COUNTRIES = ['United States','Canada','Sweden','Iceland','Norway','United Kingdom'];
-const BH_TRUNC = 40;  // deliberately does NOT start at 0
+const BH_TRUNC = 40;  // deliberately does NOT start at 0 for this 
 
 const COL_F_SEC  = 'average_value_School enrollment, secondary, female (% gross)';
 const COL_M_SEC  = 'average_value_School enrollment, secondary, male (% gross)';
@@ -22,7 +22,7 @@ let scatterData    = [];  // current year's points (rendered)
 let fullData       = [];  // tertiary enrollment for black hat
 let selYear        = 2015;
 
-// fixed scales — computed over ALL years so axes don't jump
+// fixed scales. This is computed over ALL years so axes don't jump
 let xScAll, yScAll;
 
 let svg1, g1;
@@ -102,10 +102,10 @@ function parseData(rows) {
 }
 
 
-// ── Chart 1: Scatter — Fertility rate vs. Education gender gap ──────────────
+// CHART 1
 
 function buildChart1() {
-    // fixed scales over ALL years so axes never jump during year changes
+    //fixed scales over ALL years so axes never jump during year changes
     const allGaps  = allScatterData.map(d => d.fSec - d.mSec);
     const allFerts = allScatterData.map(d => d.fert);
 
@@ -119,7 +119,7 @@ function buildChart1() {
 
     const xSc = xScAll, ySc = yScAll;
 
-    // ── background shading ──
+    // background chart shading
     const y0 = ySc(0);
     g1.append('rect')
         .attr('x', 0).attr('y', 0)
@@ -144,7 +144,7 @@ function buildChart1() {
         .attr('y1', y0).attr('y2', y0)
         .attr('stroke', '#999').attr('stroke-dasharray', '4 3').attr('stroke-width', 1);
 
-    // ── axes ──
+    // axises
     g1.append('g').attr('class', 'x-axis')
         .attr('transform', `translate(0,${H1})`)
         .call(d3.axisBottom(xSc).ticks(8));
@@ -169,7 +169,7 @@ function buildChart1() {
 
     updateScatter();
 
-    // ── legend ──
+    // legend
     const legData = [
         { label: 'High enrollment (>90%)', color: '#2563eb' },
         { label: 'Mid enrollment (60–90%)', color: '#16a34a' },
@@ -188,13 +188,13 @@ function buildChart1() {
             .text(d.label);
     });
 
-    // ── chart title ──
+    // chart title
     svg1.append('text').attr('class', 'chart-title')
         .attr('x', M1.left + W1 / 2).attr('y', 16)
         .attr('text-anchor', 'middle')
         .text('Fertility rate vs. education gender gap');
 
-    // ── subtitle (below title, above legend) ──
+    // subtitle 
     g1.append('text')
         .attr('x', 0).attr('y', -58)
         .attr('font-size', '11px').attr('fill', '#666')
@@ -209,7 +209,7 @@ function buildChart1() {
         .attr('font-family', 'Arial, sans-serif')
         .text('');
 
-    // ── footer axis note (centered) ──
+    // footer axis label
     svg1.append('text')
         .attr('x', M1.left + W1 / 2)
         .attr('y', M1.top + H1 + M1.bottom - 2)
@@ -223,7 +223,7 @@ function buildChart1() {
 function updateScatter() {
     scatterData = allScatterData.filter(d => d.year === selYear);
 
-    // ── dots with transition ──
+    // dots with transition as the year changes
     g1.select('.dots-g').selectAll('.scatter-dot')
         .data(scatterData, d => d.country)
         .join(
@@ -286,7 +286,7 @@ function setupYearSlider() {
 }
 
 
-// ── Chart 2: Black Hat — Grouped Bar Chart (truncated y-axis) ───────────────
+// Chart 2
 
 function buildChart2() {
     const bhData = BH_COUNTRIES.map(c => {
