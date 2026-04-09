@@ -1,0 +1,150 @@
+* {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* header */
+header { margin-bottom: 1.5rem; }
+header h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+.subtitle { color: #444; font-size: 0.95rem; margin: 0.3rem 0; }
+.byline { color: #999; font-size: 0.8rem; margin: 0.2rem 0; }
+
+/* dashboard */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.chart-panel { width: fit-content; }
+
+/* section labels */
+.section-label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+.white-hat-label { color: #2563eb; }
+.black-hat-label { color: #b91c1c; }
+
+/* chart header */
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+    max-width: 760px;
+}
+
+.chart-title-text { font-size: 1rem; font-weight: bold; margin: 0 0 0.2rem; }
+.chart-desc { font-size: 0.8rem; color: #666; margin: 0; max-width: 490px; }
+
+/* controls */
+.controls-cluster { display: flex; gap: 1rem; flex-shrink: 0; }
+.control-group { display: flex; flex-direction: column; gap: 2px; }
+.ctrl-label { font-size: 11px; color: #888; max-width: 160px; line-height: 1.3; }
+.ctrl-select { font-size: 12px; padding: 3px 4px; font-family: Arial, sans-serif; min-width: 180px; }
+
+/* SVG borders */
+#chart1 svg, #chart2 svg {
+    border: 1px solid #ccc;
+    display: block;
+}
+
+.chart-caption {
+    font-size: 11px;
+    color: #999;
+    margin: 4px 0 0;
+    max-width: 760px;
+}
+
+/* tooltip */
+.tooltip {
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    line-height: 1.6;
+}
+
+/* SVG axis / title text */
+.axis-label  { font-size: 12px; fill: #333; font-family: Arial, sans-serif; }
+.chart-title { font-size: 13px; font-weight: bold; fill: #222; font-family: Arial, sans-serif; }
+.bh-title    { fill: #b91c1c; }
+
+/* ── White hat: gap line chart ── */
+.gap-line  { fill: none; }
+.gap-label { font-family: Arial, sans-serif; }
+
+.ref-line  { stroke: #e33; stroke-width: 1px; stroke-dasharray: 5 4; opacity: 0.6; }
+.ref-label { font-size: 10px; fill: #e33; font-family: Arial, sans-serif; }
+
+/* zone labels */
+.zone-label { font-size: 11px; font-family: Arial, sans-serif; font-style: italic; opacity: 0.8; }
+
+/* annotation */
+.annot-text {
+    font-size: 10px;
+    fill: #444;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+}
+.annot-line { stroke: #888; stroke-width: 1px; stroke-dasharray: 3 2; }
+
+/* fertility bar chart */
+#chart1b svg { border: 1px solid #ccc; border-top: none; display: block; }
+.fert-bar  { cursor: default; }
+.fert-label { font-family: Arial, sans-serif; }
+
+/* year slider */
+.year-slider-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0 4px;
+    max-width: 775px;
+}
+.year-slider-label { font-size: 13px; color: #555; white-space: nowrap; }
+.year-slider {
+    flex: 1;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* ── Black hat: bar chart ── */
+.female-bar { fill: #7c3aed; }   /* purple — looks "alarming" for men-are-losing framing */
+.male-bar   { fill: #b91c1c; }   /* red */
+
+.bar-label {
+    font-size: 11px;
+    fill: #333;
+    font-family: Arial, sans-serif;
+    text-anchor: middle;
+}
+
+.bh-label {
+    font-size: 11px;
+    fill: #555;
+    font-family: Arial, sans-serif;
+}
+
+/* write-up */
+.writeup { margin-top: 2rem; max-width: 860px; }
+.writeup h2 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.writeup h3 { font-size: 1rem; font-weight: bold; margin-top: 1.2rem; }
+.writeup p, .writeup li { color: #333; margin-bottom: 0.4rem; font-size: 0.9rem; }
+.writeup ul { padding-left: 1.4rem; }
+.writeup a { color: #2563eb; }

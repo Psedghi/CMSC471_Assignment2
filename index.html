@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gender &amp; Education: Honest vs. Deceptive Visualization</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- HEADER -->
+      <header>
+        <h1>Gender and Education: Two Ways to Tell the Story</h1>
+        <p class="subtitle">
+          How structural barriers shape the global education pipeline — and how
+          cherry-picking university data hides them.
+        </p>
+        <p class="byline">
+          CMSC471 Assignment 2 · Elizabeth Ipe &amp; Parsa Sedghi · Data: World
+          Bank Gender Statistics
+        </p>
+      </header>
+
+      <!-- INTRO -->
+      <p>
+        Education access is shaped by structural barriers — poverty, geography,
+        and fertility rates — that affect how far children progress through the
+        educational pipeline. The white-hat visualization looks at
+        <strong>secondary school</strong> enrollment globally, where those
+        structural forces are most visible: high-fertility countries
+        consistently show lower and often negative gender gaps, meaning boys
+        outpace girls. The black-hat visualization shifts focus to
+        <strong>university (tertiary) enrollment</strong> in a hand-picked set
+        of wealthy Western nations, cherry-picking the slice of the pipeline
+        where women have surged ahead and framing it as a male crisis — hiding
+        the global structural story entirely.
+      </p>
+      <p>
+        <strong>Secondary education</strong> refers to middle and high school
+        (roughly ages 12–18). <strong>Tertiary education</strong> refers to
+        university and college programs beyond secondary school.
+      </p>
+
+      <!-- DASHBOARD -->
+      <div class="dashboard">
+        <!-- WHITE HAT -->
+        <div class="chart-panel">
+          <div class="section-label white-hat-label">
+            Visual One · White Hat
+          </div>
+          <div class="chart-header">
+            <div>
+              <h2 class="chart-title-text">
+                Fertility Rate vs. Education Gender Gap Across Countries
+              </h2>
+              <p class="chart-desc">
+                Each dot is a country. The x-axis shows the total fertility
+                rate; the y-axis shows the gap between female and male secondary
+                enrollment (positive = more girls enrolled). Colors reflect
+                average enrollment level. Hover any dot for details.
+              </p>
+            </div>
+          </div>
+          <div id="chart1"></div>
+          <div class="year-slider-row">
+            <label class="year-slider-label"
+              >Year: <strong id="yearLabel">—</strong></label
+            >
+            <input
+              id="yearSlider"
+              type="range"
+              min="1970"
+              max="2019"
+              step="1"
+              value="2015"
+              class="year-slider"
+            />
+          </div>
+          <p class="chart-caption">
+            Source: World Bank Gender Statistics. Secondary enrollment (%
+            gross), female &amp; male; fertility rate, total (births per woman).
+            Countries with data for the selected year shown.
+            <em>Gross enrollment rate</em> can exceed 100% (includes students of
+            all ages, not just typical school age). Data coverage varies by
+            country and year — earlier years and lower-income countries have
+            sparser records. Missing dots for a given year indicate no data
+            reported for that country.
+          </p>
+        </div>
+
+        <!-- BLACK HAT -->
+        <div class="chart-panel">
+          <div class="section-label black-hat-label">
+            Visual Two · Black Hat
+          </div>
+          <div class="chart-header">
+            <div>
+              <h2 class="chart-title-text">
+                Men Left Behind: Women Now Dominate University Enrollment
+              </h2>
+              <p class="chart-desc">
+                Across leading nations, women's university enrollment vastly
+                outpaces men's — and the gap is only growing. Men are
+                increasingly absent from higher education. (Gross enrollment
+                rate: total enrolled ÷ college-age population; can exceed 100%.)
+              </p>
+            </div>
+          </div>
+          <div id="chart2"></div>
+          <p class="chart-caption">Source: World Bank Gender Statistics.</p>
+        </div>
+      </div>
+      <!-- end .dashboard -->
+
+      <!-- WRITE-UP -->
+      <section class="writeup">
+        <h2>Write-up</h2>
+
+        <h3>Dataset</h3>
+        <p>
+          We used the <em>World Bank Gender Statistics</em> dataset, which
+          provides data between 1970–2019, to model different levels of the
+          education pipeline. For our white-hat visualization, we looked at
+          <strong>School enrollment, secondary (female/male % gross)</strong>
+          and <strong>Fertility rate, total (births per woman)</strong> to show
+          how structural barriers shape access at the middle/high school level
+          over time. In the black-hat chart, we used
+          <strong>School enrollment, tertiary, female (% gross)</strong> and
+          <strong>School enrollment, tertiary, male (% gross)</strong> for six
+          hand-picked high-income countries. One thing to note about the data is
+          that gross enrollment rates can go over 100% when students outside the
+          standard school-age range are included.
+        </p>
+
+        <h3>Visual One: White Hat</h3>
+        <p>
+          We used a scatter plot with fertility rate on the x-axis and gender
+          gap in secondary school enrollment (female − male, percentage points)
+          across 186 countries. A positive value on the y-axis indicates that
+          more girls are enrolled than boys. There is background shading on the
+          graph, where blue means more girls are enrolled and orange means that
+          more boys are enrolled. Each country is a point, and each point is
+          colored according to three different categories: blue for high
+          (&gt;90%), green for mid (60–90%), and orange-red for low (&lt;60%).
+          The user is also able to choose the year they want to view underneath
+          the graph using the slider. We also included a legend with information
+          about the groupings and the y-axis to help the user understand the
+          graph. Overall, we can see that countries with higher fertility rates
+          tend to have lower or negative enrollment gaps, while countries with
+          lower fertility rates tend to have higher enrollment in girls. This
+          design is completely transparent, meaning that no countries were
+          selected specifically to prove a point.
+        </p>
+
+        <h3>Visual Two: Black Hat</h3>
+        <p>
+          This visualization is based on the same dataset but is purposely
+          deceptive. We chose only six high-income countries — United States,
+          Canada, Sweden, Iceland, Norway, and the United Kingdom — and showed
+          that they have higher female enrollment rates to make the user assume
+          that there is a gap between women and men worldwide. We purposely hid
+          the fact that the gap between male and female enrollment worldwide is
+          only about 6 percentage points. We also left out the fact that men
+          enroll equally or at higher rates in Sub-Saharan Africa and South
+          Asia. Additionally, we started the y-axis at 40% instead of 0% so that
+          there is a more dramatic visual difference. For example, the Iceland
+          difference appears very large even though both rates represent high
+          levels of access globally. Finally, we created a biased message in the
+          title and caption even though men’s enrollment has also been
+          increasing steadily (women’s enrollment has simply increased faster).
+          Together, these aspects portray a misleading narrative that men are
+          getting pushed aside.
+        </p>
+
+        <h3>References</h3>
+        <ul>
+          <li>
+            World Bank Gender Statistics.
+            <em>School enrollment, tertiary, female/male (% gross)</em>.
+            <a
+              href="https://github.com/light-and-salt/World-Bank-Data-by-Indicators/tree/master/gender"
+              target="_blank"
+            >
+              github.com/light-and-salt/World-Bank-Data-by-Indicators
+            </a>
+          </li>
+        </ul>
+
+        <h3>Development Process</h3>
+        <p>
+          The work was split between Elizabeth and Parsa. Elizabeth led the
+          write-up and design rationale for both visualizations. Parsa led the
+          D3 implementation and data parsing. Both contributed to brainstorming
+          the black-hat deception techniques. Total development time was
+          approximately 6–8 hours. The data parsing and the design rationale
+          took the most time because the dataset was very large and contained a
+          significant amount of information to interpret. The design rationale
+          also required careful planning to ensure the black-hat techniques
+          remained subtle enough to appear trustworthy while still effectively
+          skewing the narrative.
+        </p>
+
+        <h3>AI Usage</h3>
+        <p>
+          Claude was used to help implement the D3 visualization code, debug
+          data parsing issues, and refine the CSS layout. Claude also assisted
+          with general styling decisions such as centering elements, adjusting
+          spacing, and formatting the page structure. Gemini was used for
+          initial brainstorming on which deception techniques would be most
+          pedagogically effective for the black-hat visualization. While we
+          directed all design choices ourselves, Claude helped translate those
+          decisions into working code efficiently.
+        </p>
+      </section>
+    </div>
+    <!-- end .container -->
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
