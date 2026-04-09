@@ -8,14 +8,9 @@ It is tempting to view data visualization as a neutral, objective medium. Howeve
 
 ### Visual One: The White Hat
 Our transparent, "White Hat" visualization explores the structural barriers affecting the educational pipeline. 
-* **The Design:** An interactive scatterplot mapping the Total Fertility Rate against the Secondary Education Gender Gap. 
-* **The Narrative:** By extending the data to include fertility rates, we reveal that the gender gap in education is heavily tied to structural realities; countries with high adolescent fertility rates see significantly higher drop-out rates for girls. 
-* **Features:** Intuitive parity-baseline shading, enrollment-level color coding, and an interactive timeline slider.
 
 ### Visual Two: The Black Hat
 Our deceptive, "Black Hat" visualization uses the exact same dataset to push a highly skewed narrative that men are being actively pushed out of higher education.
-* **The Design:** A clean, professional-looking grouped bar chart that appears trustworthy at first glance.
-* **The Deception:** We utilized several "black hat" cognitive biases, including **cherry-picking** (filtering out 95% of the globe to show only 6 high-income nations where the female advantage is highest) and a **truncated y-axis** (starting at 40% to visually exaggerate the gap). 
 
 ## Dataset
 **World Bank Gender Statistics**
