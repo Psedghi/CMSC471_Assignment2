@@ -209,14 +209,6 @@ function buildChart1() {
         .attr('font-family', 'Arial, sans-serif')
         .text('');
 
-    // footer axis label
-    svg1.append('text')
-        .attr('x', M1.left + W1 / 2)
-        .attr('y', M1.top + H1 + M1.bottom - 2)
-        .attr('text-anchor', 'middle')
-        .attr('font-size', '10px').attr('fill', '#999')
-        .attr('font-family', 'Arial, sans-serif')
-        .text('x-axis: fertility rate (births per woman)  ·  y-axis: female − male secondary enrollment (%pt)');
 }
 
 
