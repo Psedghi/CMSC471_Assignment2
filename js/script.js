@@ -5,9 +5,9 @@ const W1 = 650, H1 = 430;
 const M2 = { top: 50, right: 40, bottom: 80, left: 75 };
 const W2 = 620, H2 = 360;
 
-// black hat: cherry-picked high-income countries
+// black hat: high-income countries
 const BH_COUNTRIES = ['United States','Canada','Sweden','Iceland','Norway','United Kingdom'];
-const BH_TRUNC = 40;  // deliberately does NOT start at 0 for this 
+const BH_TRUNC = 40;  // purposely start at 40 to make a more dramatic visual
 
 const COL_F_SEC  = 'average_value_School enrollment, secondary, female (% gross)';
 const COL_M_SEC  = 'average_value_School enrollment, secondary, male (% gross)';
@@ -18,7 +18,7 @@ const COL_M_TER  = 'average_value_School enrollment, tertiary, male (% gross)';
 const tip = d3.select('body').append('div').attr('class', 'tooltip').style('opacity', 0);
 
 let allScatterData = [];  // all country-year points (for year toggle)
-let scatterData    = [];  // current year's points (rendered)
+let scatterData    = [];  // current year's points
 let fullData       = [];  // tertiary enrollment for black hat
 let selYear        = 2015;
 
